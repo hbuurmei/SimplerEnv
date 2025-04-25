@@ -27,9 +27,12 @@ ENVIRONMENTS = [
     "widowx_carrot_on_plate",
     "widowx_stack_cube",
     "widowx_put_eggplant_in_basket",
-    # * adding new environments
+    # * add new logic (rabbit) and new enviroment (eggplant on plate)
     "widowx_carrot_on_plate_logic",
-    "widowx_eggplant_on_plate_logic"
+    "widowx_eggplant_on_plate_logic", #! this is in training data
+    # * new task and new object
+    "widowx_eggplant_on_carrot",
+    "widowx_coke_can_on_plate",
 ]
 
 ENVIRONMENT_MAP = {
@@ -73,6 +76,9 @@ ENVIRONMENT_MAP = {
     # * adding new environments
     "widowx_carrot_on_plate_logic": ("PutCarrotOnPlateInScene-v1", {}),
     "widowx_eggplant_on_plate_logic": ("PutEggplantOnPlateInScene-v1", {}),
+    # * new task and new object
+    "widowx_eggplant_on_carrot": ("PutEggplantOnCarrotInScene-v1", {}),
+    "widowx_coke_can_on_plate": ("PutCokeCanOnPlateInScene-v1", {}),
 }
 
 
