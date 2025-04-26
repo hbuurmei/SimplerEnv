@@ -1,4 +1,0 @@
-[submodule "ManiSkill2_real2sim"]
-	path = ManiSkill2_real2sim
-	url = https://github.com/juexZZ/ManiSkill2_real2sim.git
-	branch = my-changes-after-allen
