@@ -33,6 +33,18 @@ ENVIRONMENTS = [
     # * new task and new object
     "widowx_eggplant_on_carrot",
     "widowx_coke_can_on_plate",
+    # * new task: unseen target, unseen action combinations
+    "widowx_carrot_on_coke_can",
+    "widowx_carrot_on_green_cube",
+    "widowx_plate_on_green_cube",
+    "widowx_coke_can_on_pepsi_can",
+    # * generatization test
+    "widowx_cube_on_plate_clean",
+    "widowx_small_plate_on_green_cube",
+    "widowx_coke_can_on_plate_clean",
+    "widowx_carrot_on_Sponge_clean",
+    "widowx_carrot_on_keyboard_clean",
+    "widowx_coke_can_on_keyboard_clean",
 ]
 
 ENVIRONMENT_MAP = {
@@ -79,6 +91,18 @@ ENVIRONMENT_MAP = {
     # * new task and new object
     "widowx_eggplant_on_carrot": ("PutEggplantOnCarrotInScene-v1", {}),
     "widowx_coke_can_on_plate": ("PutCokeCanOnPlateInScene-v1", {}),
+    # * new task: unseen target, unseen action combinations, too hard
+    "widowx_carrot_on_coke_can": ("PutCarrotOnCokeCanInScene-v1", {}),
+    "widowx_carrot_on_green_cube": ("PutCarrotOnGreenCubeInScene-v1", {}),
+    "widowx_plate_on_green_cube": ("PutPlateOnGreenCubeInScene-v1", {}),
+    "widowx_coke_can_on_pepsi_can": ("PutCokeCanOnPepsiCanInScene-v1", {}),
+    # * generatization test
+    "widowx_cube_on_plate_clean": ("PutGreenCubeOnPlateInScene-v2", {}),
+    "widowx_small_plate_on_green_cube": ("PutSmallPlateOnGreenCubeInScene-v2", {}),
+    "widowx_coke_can_on_plate_clean": ("PutCokeCanOnPlateInScene-v2", {}),
+    "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}),
+    "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}),
+    "widowx_coke_can_on_keyboard_clean": ("PutCokeCanOnKeyboardInScene-v2", {}),
 }
 
 
