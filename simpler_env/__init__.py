@@ -40,7 +40,7 @@ ENVIRONMENTS = [
     "widowx_coke_can_on_pepsi_can",
     # * generatization test
     "widowx_cube_on_plate_clean",
-    "widowx_small_plate_on_green_cube",
+    "widowx_small_plate_on_green_cube_clean",
     "widowx_coke_can_on_plate_clean",
     "widowx_carrot_on_Sponge_clean",
     "widowx_carrot_on_keyboard_clean",
@@ -98,7 +98,7 @@ ENVIRONMENT_MAP = {
     "widowx_coke_can_on_pepsi_can": ("PutCokeCanOnPepsiCanInScene-v1", {}),
     # * generatization test
     "widowx_cube_on_plate_clean": ("PutGreenCubeOnPlateInScene-v2", {}),
-    "widowx_small_plate_on_green_cube": ("PutSmallPlateOnGreenCubeInScene-v2", {}),
+    "widowx_small_plate_on_green_cube_clean": ("PutSmallPlateOnGreenCubeInScene-v2", {}),
     "widowx_coke_can_on_plate_clean": ("PutCokeCanOnPlateInScene-v2", {}),
     "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}),
     "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}),
