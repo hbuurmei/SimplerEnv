@@ -27,12 +27,6 @@ ENVIRONMENTS = [
     "widowx_carrot_on_plate",
     "widowx_stack_cube",
     "widowx_put_eggplant_in_basket",
-    # * add new logic (rabbit) and new enviroment (eggplant on plate)
-    "widowx_carrot_on_plate_logic",
-    "widowx_eggplant_on_plate_logic", #! this is in training data
-    # * new task and new object
-    "widowx_eggplant_on_carrot",
-    "widowx_coke_can_on_plate",
     # * new task: unseen target, unseen action combinations
     "widowx_carrot_on_coke_can",
     "widowx_carrot_on_green_cube",
@@ -45,6 +39,25 @@ ENVIRONMENTS = [
     "widowx_carrot_on_Sponge_clean",
     "widowx_carrot_on_keyboard_clean",
     "widowx_coke_can_on_keyboard_clean",
+    # * object distraction
+    "widowx_spoon_on_towel_distract",
+    "widowx_carrot_on_plate_distract",
+    "widowx_carrot_on_keyboard_distract",
+    "widowx_coke_can_on_plate_distract",
+    "widowx_coke_can_on_keyboard_distract",
+    # * language variation
+    "widowx_carrot_on_plate_lang_common", # rabbit, no distract
+    "widowx_carrot_on_plate_lang_action",
+    "widowx_carrot_on_plate_lang_neg",
+    "widowx_carrot_on_plate_lang_neg_action", # on the table not on the plate
+    "widowx_carrot_on_plate_lang_common_distract", # rabbit
+    "widowx_spoon_on_towel_lang_common",
+    "widowx_spoon_on_towel_lang_common_distract",
+    "widowx_eggplant_in_basket_lang_color",
+    "widowx_eggplant_in_basket_lang_common",
+    "widowx_carrot_on_keyboard_lang_common",
+    "widowx_coke_can_on_plate_lang_neg",
+    "widowx_coke_can_on_plate_lang_common_distract", # thirsty
 ]
 
 ENVIRONMENT_MAP = {
@@ -85,12 +98,6 @@ ENVIRONMENT_MAP = {
     "widowx_carrot_on_plate": ("PutCarrotOnPlateInScene-v0", {}),
     "widowx_stack_cube": ("StackGreenCubeOnYellowCubeBakedTexInScene-v0", {}),
     "widowx_put_eggplant_in_basket": ("PutEggplantInBasketScene-v0", {}),
-    # * adding new environments
-    "widowx_carrot_on_plate_logic": ("PutCarrotOnPlateInScene-v1", {}),
-    "widowx_eggplant_on_plate_logic": ("PutEggplantOnPlateInScene-v1", {}),
-    # * new task and new object
-    "widowx_eggplant_on_carrot": ("PutEggplantOnCarrotInScene-v1", {}),
-    "widowx_coke_can_on_plate": ("PutCokeCanOnPlateInScene-v1", {}),
     # * new task: unseen target, unseen action combinations, too hard
     "widowx_carrot_on_coke_can": ("PutCarrotOnCokeCanInScene-v1", {}),
     "widowx_carrot_on_green_cube": ("PutCarrotOnGreenCubeInScene-v1", {}),
@@ -103,6 +110,25 @@ ENVIRONMENT_MAP = {
     "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}),
     "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}),
     "widowx_coke_can_on_keyboard_clean": ("PutCokeCanOnKeyboardInScene-v2", {}),
+    # * object distraction
+    "widowx_spoon_on_towel_distract": ("PutSpoonOnTableClothInScene-distract", {}),
+    "widowx_carrot_on_plate_distract": ("PutCarrotOnPlateInScene-distract", {}),
+    "widowx_carrot_on_keyboard_distract": ("PutCarrotOnKeyboardInScene-distract", {}),
+    "widowx_coke_can_on_plate_distract": ("PutCokeCanOnPlateInScene-distract", {}),
+    "widowx_coke_can_on_keyboard_distract": ("PutCokeCanOnKeyboardInScene-distract", {}),
+    # * language variation
+    "widowx_carrot_on_plate_lang_common": ("PutCarrotOnPlateInScene-LangV1", {}), # rabbit, no distract
+    "widowx_carrot_on_plate_lang_action": ("PutCarrotOnPlateInScene-LangV2", {}), # pick up the carrot and drop it off on the plate
+    "widowx_carrot_on_plate_lang_neg": ("PutCarrotOnPlateInScene-LangV3", {}), # put the carrot on the plate, not the towel
+    "widowx_carrot_on_plate_lang_neg_action": ("PutCarrotOnPlateInScene-LangV4", {}), # on the table not on the plate
+    "widowx_carrot_on_plate_lang_common_distract": ("PutCarrotOnPlateInScene-LangV5", {}), # rabbit
+    "widowx_spoon_on_towel_lang_common": ("PutSpoonOnTableClothInScene-LangV1", {}),
+    "widowx_spoon_on_towel_lang_common_distract": ("PutSpoonOnTableClothInScene-LangV2", {}),
+    "widowx_eggplant_in_basket_lang_color": ("PutEggplantInBasketScene-LangV1", {}),
+    "widowx_eggplant_in_basket_lang_common": ("PutEggplantInBasketScene-LangV2", {}),
+    "widowx_carrot_on_keyboard_lang_common": ("PutCarrotOnKeyboardInScene-LangV1", {}),
+    "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}),
+    "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty
 }
 
 
