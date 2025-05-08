@@ -58,6 +58,15 @@ ENVIRONMENTS = [
     "widowx_carrot_on_keyboard_lang_common",
     "widowx_coke_can_on_plate_lang_neg",
     "widowx_coke_can_on_plate_lang_common_distract", # thirsty
+    # * added 05-08
+    "widowx_coke_can_on_plate_lang_common",
+    "widowx_carrot_on_sponge_larger",
+    "widowx_eggplant_on_sponge",
+    "widowx_eggplant_on_sponge_larger",
+    "widowx_eggplant_in_basket_lang_action",
+    "widowx_spoon_on_towel_lang_action",
+    "widowx_stack_cube_lang_action",
+    "widowx_pepsi_on_plate_clean",
 ]
 
 ENVIRONMENT_MAP = {
@@ -103,32 +112,41 @@ ENVIRONMENT_MAP = {
     "widowx_carrot_on_green_cube": ("PutCarrotOnGreenCubeInScene-v1", {}),
     "widowx_plate_on_green_cube": ("PutPlateOnGreenCubeInScene-v1", {}),
     "widowx_coke_can_on_pepsi_can": ("PutCokeCanOnPepsiCanInScene-v1", {}),
-    # * generatization test
-    "widowx_cube_on_plate_clean": ("PutGreenCubeOnPlateInScene-v2", {}),
-    "widowx_small_plate_on_green_cube_clean": ("PutSmallPlateOnGreenCubeInScene-v2", {}),
-    "widowx_coke_can_on_plate_clean": ("PutCokeCanOnPlateInScene-v2", {}),
-    "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}),
-    "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}),
-    "widowx_coke_can_on_keyboard_clean": ("PutCokeCanOnKeyboardInScene-v2", {}),
+    # * generatization test, clean background
+    "widowx_cube_on_plate_clean": ("PutGreenCubeOnPlateInScene-v2", {}), # seen source and target, unseen combination
+    "widowx_small_plate_on_green_cube_clean": ("PutSmallPlateOnGreenCubeInScene-v2", {}), # seen source and target, unseen combination (a reverse)
+    "widowx_coke_can_on_plate_clean": ("PutCokeCanOnPlateInScene-v2", {}), # ood source
+    "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}), # seen source and target, unseen combination
+    "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}), # ood target
+    "widowx_coke_can_on_keyboard_clean": ("PutCokeCanOnKeyboardInScene-v2", {}), # ood source and ood target
     # * object distraction
-    "widowx_spoon_on_towel_distract": ("PutSpoonOnTableClothInScene-distract", {}),
-    "widowx_carrot_on_plate_distract": ("PutCarrotOnPlateInScene-distract", {}),
-    "widowx_carrot_on_keyboard_distract": ("PutCarrotOnKeyboardInScene-distract", {}),
-    "widowx_coke_can_on_plate_distract": ("PutCokeCanOnPlateInScene-distract", {}),
-    "widowx_coke_can_on_keyboard_distract": ("PutCokeCanOnKeyboardInScene-distract", {}),
+    "widowx_spoon_on_towel_distract": ("PutSpoonOnTableClothInScene-distract", {}), # spoon on towel, + plate + carrot, [original, source distract + target distract]
+    "widowx_carrot_on_plate_distract": ("PutCarrotOnPlateInScene-distract", {}), # + spoon + towel [original, source distract + target distract]
+    "widowx_carrot_on_keyboard_distract": ("PutCarrotOnKeyboardInScene-distract", {}), # + plate + spoon [ood target, source + target distract]
+    "widowx_coke_can_on_plate_distract": ("PutCokeCanOnPlateInScene-distract", {}), # + pepsi can + carrot [ood source, source distract]
+    "widowx_coke_can_on_keyboard_distract": ("PutCokeCanOnKeyboardInScene-distract", {}), # + plate + carrot [ood source ood target, source + target distract]
     # * language variation
-    "widowx_carrot_on_plate_lang_common": ("PutCarrotOnPlateInScene-LangV1", {}), # rabbit, no distract
+    "widowx_carrot_on_plate_lang_common": ("PutCarrotOnPlateInScene-LangV1", {}), # carrot -> rabbits' favorite vegetable, no distract
     "widowx_carrot_on_plate_lang_action": ("PutCarrotOnPlateInScene-LangV2", {}), # pick up the carrot and drop it off on the plate
     "widowx_carrot_on_plate_lang_neg": ("PutCarrotOnPlateInScene-LangV3", {}), # put the carrot on the plate, not the towel
     "widowx_carrot_on_plate_lang_neg_action": ("PutCarrotOnPlateInScene-LangV4", {}), # on the table not on the plate
-    "widowx_carrot_on_plate_lang_common_distract": ("PutCarrotOnPlateInScene-LangV5", {}), # rabbit
-    "widowx_spoon_on_towel_lang_common": ("PutSpoonOnTableClothInScene-LangV1", {}),
-    "widowx_spoon_on_towel_lang_common_distract": ("PutSpoonOnTableClothInScene-LangV2", {}),
-    "widowx_eggplant_in_basket_lang_color": ("PutEggplantInBasketScene-LangV1", {}),
-    "widowx_eggplant_in_basket_lang_common": ("PutEggplantInBasketScene-LangV2", {}),
-    "widowx_carrot_on_keyboard_lang_common": ("PutCarrotOnKeyboardInScene-LangV1", {}),
-    "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}),
-    "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty
+    "widowx_carrot_on_plate_lang_common_distract": ("PutCarrotOnPlateInScene-LangV5", {}), # rabbit, + distract rabbit + eggplant
+    "widowx_spoon_on_towel_lang_common": ("PutSpoonOnTableClothInScene-LangV1", {}), # spoon -> kitchenware for eating soup
+    "widowx_spoon_on_towel_lang_common_distract": ("PutSpoonOnTableClothInScene-LangV2", {}), # spoon -> kitchenware for eating soup, + sponge + eggplant
+    "widowx_eggplant_in_basket_lang_color": ("PutEggplantInBasketScene-LangV1", {}), # eggplant -> purple object
+    "widowx_eggplant_in_basket_lang_common": ("PutEggplantInBasketScene-LangV2", {}), # yellow basket -> where the dishes usually get dried
+    "widowx_carrot_on_keyboard_lang_common": ("PutCarrotOnKeyboardInScene-LangV1", {}), # keyboard -> tool for typing words
+    "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}), # "put coke can, not the carrot, not the pepsi can, on the plate"
+    "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty "put the object that one needs the most when they are thirsty on plate" + carrot + eggplant
+    # * added 05-08
+    "widowx_coke_can_on_plate_lang_common": ("PutCokeCanOnPlateInScene-LangV3", {}), # languge commonsense, no distract, (thirsty)
+    "widowx_carrot_on_sponge_larger": ("PutCarrotOnSpongeLargerInScene-v2", {}), # TODO: sponge: see if grasp correct is severely affected by unusual target
+    "widowx_eggplant_on_sponge": ("PutEggplantOnSpongeInScene-v2", {}),
+    "widowx_eggplant_on_sponge_larger": ("PutEggplantOnSpongeLargerInScene-v2", {}),
+    "widowx_eggplant_in_basket_lang_action": ("PutEggplantInBasketScene-LangV3", {}), # TODO: language action, see if performance also severely drop like the carrot case
+    "widowx_spoon_on_towel_lang_action": ("PutSpoonOnTableClothInScene-LangV3", {}), # language action
+    "widowx_stack_cube_lang_action": ("StackGreenCubeOnYellowCubeBakedTexInScene-LangV1", {}),
+    "widowx_pepsi_on_plate_clean": ("PutPepsiCanOnPlateInScene-v2", {}), # TODO: another OOD source besides coke can, also a texture difference
 }
 
 
