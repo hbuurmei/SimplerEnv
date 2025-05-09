@@ -23,21 +23,19 @@ ENVIRONMENTS = [
     "google_robot_place_in_closed_middle_drawer",
     "google_robot_place_in_closed_bottom_drawer",
     "google_robot_place_apple_in_closed_top_drawer",
+    # * original tasks
     "widowx_spoon_on_towel",
     "widowx_carrot_on_plate",
     "widowx_stack_cube",
     "widowx_put_eggplant_in_basket",
-    # * new task: unseen target, unseen action combinations
-    "widowx_carrot_on_coke_can",
-    "widowx_carrot_on_green_cube",
-    "widowx_plate_on_green_cube",
-    "widowx_coke_can_on_pepsi_can",
     # * generatization test
-    "widowx_cube_on_plate_clean",
-    "widowx_small_plate_on_green_cube_clean",
-    "widowx_coke_can_on_plate_clean",
-    "widowx_carrot_on_Sponge_clean",
-    "widowx_carrot_on_keyboard_clean",
+    "widowx_cube_on_plate_clean", # seen source and target, unseen combination
+    "widowx_small_plate_on_green_cube_clean", # seen source and target, unseen combination (a reverse)
+    "widowx_coke_can_on_plate_clean", # ood source
+    "widowx_pepsi_on_plate_clean", # another OOD source besides coke can, also a texture difference
+    "widowx_carrot_on_sponge_clean", # seen source and target, unseen combination
+    "widowx_eggplant_on_sponge_clean",
+    "widowx_carrot_on_keyboard_clean", # ood target
     "widowx_coke_can_on_keyboard_clean",
     # * object distraction
     "widowx_spoon_on_towel_distract",
@@ -51,27 +49,29 @@ ENVIRONMENTS = [
     "widowx_carrot_on_plate_lang_neg",
     "widowx_carrot_on_plate_lang_neg_action", # on the table not on the plate
     "widowx_carrot_on_plate_lang_common_distract", # rabbit
+    "widowx_spoon_on_towel_lang_action",
     "widowx_spoon_on_towel_lang_common",
     "widowx_spoon_on_towel_lang_common_distract",
+    "widowx_stack_cube_lang_action",
+    "widowx_eggplant_in_basket_lang_action",
     "widowx_eggplant_in_basket_lang_color",
     "widowx_eggplant_in_basket_lang_common",
     "widowx_carrot_on_keyboard_lang_common",
+    "widowx_coke_can_on_plate_lang_common",
     "widowx_coke_can_on_plate_lang_neg",
     "widowx_coke_can_on_plate_lang_common_distract", # thirsty
-    # * added 05-08
-    "widowx_coke_can_on_plate_lang_common",
-    "widowx_carrot_on_sponge_larger",
-    "widowx_eggplant_on_sponge",
-    "widowx_eggplant_on_sponge_larger",
-    "widowx_eggplant_in_basket_lang_action",
-    "widowx_spoon_on_towel_lang_action",
-    "widowx_stack_cube_lang_action",
-    "widowx_pepsi_on_plate_clean",
-    # lighting
-    "widowx_carrot_on_plate_brighter",
-    "widowx_carrot_on_plate_darker",
-    "widowx_eggplant_in_basket_brighter",
-    "widowx_eggplant_in_basket_darker",
+    # # ! not in used.
+    # # lighting
+    # "widowx_carrot_on_plate_brighter",
+    # "widowx_carrot_on_plate_darker",
+    # "widowx_eggplant_in_basket_brighter",
+    # "widowx_eggplant_in_basket_darker",
+    # # * Not in used tasks, too difficult or difficult to evaluate
+    # "widowx_carrot_on_coke_can",
+    # "widowx_carrot_on_green_cube",
+    # "widowx_plate_on_green_cube",
+    # "widowx_coke_can_on_pepsi_can",
+    # "widowx_carrot_on_Sponge_clean",
 ]
 
 ENVIRONMENT_MAP = {
@@ -112,16 +112,13 @@ ENVIRONMENT_MAP = {
     "widowx_carrot_on_plate": ("PutCarrotOnPlateInScene-v0", {}),
     "widowx_stack_cube": ("StackGreenCubeOnYellowCubeBakedTexInScene-v0", {}),
     "widowx_put_eggplant_in_basket": ("PutEggplantInBasketScene-v0", {}),
-    # * new task: unseen target, unseen action combinations, too hard
-    "widowx_carrot_on_coke_can": ("PutCarrotOnCokeCanInScene-v1", {}),
-    "widowx_carrot_on_green_cube": ("PutCarrotOnGreenCubeInScene-v1", {}),
-    "widowx_plate_on_green_cube": ("PutPlateOnGreenCubeInScene-v1", {}),
-    "widowx_coke_can_on_pepsi_can": ("PutCokeCanOnPepsiCanInScene-v1", {}),
     # * generatization test, clean background
     "widowx_cube_on_plate_clean": ("PutGreenCubeOnPlateInScene-v2", {}), # seen source and target, unseen combination
     "widowx_small_plate_on_green_cube_clean": ("PutSmallPlateOnGreenCubeInScene-v2", {}), # seen source and target, unseen combination (a reverse)
     "widowx_coke_can_on_plate_clean": ("PutCokeCanOnPlateInScene-v2", {}), # ood source
-    "widowx_carrot_on_Sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}), # seen source and target, unseen combination
+    "widowx_pepsi_on_plate_clean": ("PutPepsiCanOnPlateInScene-v2", {}), # TODO: another OOD source besides coke can, also a texture difference
+    "widowx_carrot_on_sponge_clean": ("PutCarrotOnSpongeLargerInScene-v2", {}), # seen source and target, unseen combination
+    "widowx_eggplant_on_sponge_clean": ("PutEggplantOnSpongeLargerInScene-v2", {}),
     "widowx_carrot_on_keyboard_clean": ("PutCarrotOnKeyboardInScene-v2", {}), # ood target
     "widowx_coke_can_on_keyboard_clean": ("PutCokeCanOnKeyboardInScene-v2", {}), # ood source and ood target
     # * object distraction
@@ -138,25 +135,28 @@ ENVIRONMENT_MAP = {
     "widowx_carrot_on_plate_lang_common_distract": ("PutCarrotOnPlateInScene-LangV5", {}), # rabbit, + distract rabbit + eggplant
     "widowx_spoon_on_towel_lang_common": ("PutSpoonOnTableClothInScene-LangV1", {}), # spoon -> kitchenware for eating soup
     "widowx_spoon_on_towel_lang_common_distract": ("PutSpoonOnTableClothInScene-LangV2", {}), # spoon -> kitchenware for eating soup, + sponge + eggplant
-    "widowx_eggplant_in_basket_lang_color": ("PutEggplantInBasketScene-LangV1", {}), # eggplant -> purple object
-    "widowx_eggplant_in_basket_lang_common": ("PutEggplantInBasketScene-LangV2", {}), # yellow basket -> where the dishes usually get dried
-    "widowx_carrot_on_keyboard_lang_common": ("PutCarrotOnKeyboardInScene-LangV1", {}), # keyboard -> tool for typing words
-    "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}), # "put coke can, not the carrot, not the pepsi can, on the plate"
-    "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty "put the object that one needs the most when they are thirsty on plate" + carrot + eggplant
-    # * added 05-08
-    "widowx_coke_can_on_plate_lang_common": ("PutCokeCanOnPlateInScene-LangV3", {}), # languge commonsense, no distract, (thirsty)
-    "widowx_carrot_on_sponge_larger": ("PutCarrotOnSpongeLargerInScene-v2", {}), # TODO: sponge: see if grasp correct is severely affected by unusual target
-    "widowx_eggplant_on_sponge": ("PutEggplantOnSpongeInScene-v2", {}),
-    "widowx_eggplant_on_sponge_larger": ("PutEggplantOnSpongeLargerInScene-v2", {}),
-    "widowx_eggplant_in_basket_lang_action": ("PutEggplantInBasketScene-LangV3", {}), # TODO: language action, see if performance also severely drop like the carrot case
     "widowx_spoon_on_towel_lang_action": ("PutSpoonOnTableClothInScene-LangV3", {}), # language action
     "widowx_stack_cube_lang_action": ("StackGreenCubeOnYellowCubeBakedTexInScene-LangV1", {}),
-    "widowx_pepsi_on_plate_clean": ("PutPepsiCanOnPlateInScene-v2", {}), # TODO: another OOD source besides coke can, also a texture difference
-    # lighting
-    "widowx_carrot_on_plate_brighter": ("PutCarrotOnPlateInScene-light-v1", {}),
-    "widowx_carrot_on_plate_darker" : ("PutCarrotOnPlateInScene-light-v2", {}),
-    "widowx_eggplant_in_basket_brighter": ("PutEggplantInBasketScene-light-v1", {}),
-    "widowx_eggplant_in_basket_darker": ("PutEggplantInBasketScene-light-v2", {}),
+    "widowx_eggplant_in_basket_lang_color": ("PutEggplantInBasketScene-LangV1", {}), # eggplant -> purple object
+    "widowx_eggplant_in_basket_lang_common": ("PutEggplantInBasketScene-LangV2", {}), # yellow basket -> where the dishes usually get dried
+    "widowx_eggplant_in_basket_lang_action": ("PutEggplantInBasketScene-LangV3", {}),
+    "widowx_carrot_on_keyboard_lang_common": ("PutCarrotOnKeyboardInScene-LangV1", {}), # keyboard -> tool for typing words
+    "widowx_coke_can_on_plate_lang_common": ("PutCokeCanOnPlateInScene-LangV3", {}), # languge commonsense, no distract, (thirsty)
+    "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}), # "put coke can, not the carrot, not the pepsi can, on the plate"
+    "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty "put the object that one needs the most when they are thirsty on plate" + carrot + eggplant
+    # # ! not-in-used tasks
+    # # lighting
+    # "widowx_carrot_on_plate_brighter": ("PutCarrotOnPlateInScene-light-v1", {}),
+    # "widowx_carrot_on_plate_darker" : ("PutCarrotOnPlateInScene-light-v2", {}),
+    # "widowx_eggplant_in_basket_brighter": ("PutEggplantInBasketScene-light-v1", {}),
+    # "widowx_eggplant_in_basket_darker": ("PutEggplantInBasketScene-light-v2", {}),
+    # # too difficult or difficult to evaluate
+    # # "widowx_carrot_on_sponge_clean": ("PutCarrotOnSpongeInScene-v2", {}), # OLD
+    # "widowx_eggplant_on_sponge": ("PutEggplantOnSpongeInScene-v2", {}), # sponge too small
+    # "widowx_carrot_on_coke_can": ("PutCarrotOnCokeCanInScene-v1", {}),
+    # "widowx_carrot_on_green_cube": ("PutCarrotOnGreenCubeInScene-v1", {}),
+    # "widowx_plate_on_green_cube": ("PutPlateOnGreenCubeInScene-v1", {}),
+    # "widowx_coke_can_on_pepsi_can": ("PutCokeCanOnPepsiCanInScene-v1", {}),
 }
 
 
