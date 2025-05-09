@@ -67,6 +67,11 @@ ENVIRONMENTS = [
     "widowx_spoon_on_towel_lang_action",
     "widowx_stack_cube_lang_action",
     "widowx_pepsi_on_plate_clean",
+    # lighting
+    "widowx_carrot_on_plate_brighter",
+    "widowx_carrot_on_plate_darker",
+    "widowx_eggplant_in_basket_brighter",
+    "widowx_eggplant_in_basket_darker",
 ]
 
 ENVIRONMENT_MAP = {
@@ -147,6 +152,11 @@ ENVIRONMENT_MAP = {
     "widowx_spoon_on_towel_lang_action": ("PutSpoonOnTableClothInScene-LangV3", {}), # language action
     "widowx_stack_cube_lang_action": ("StackGreenCubeOnYellowCubeBakedTexInScene-LangV1", {}),
     "widowx_pepsi_on_plate_clean": ("PutPepsiCanOnPlateInScene-v2", {}), # TODO: another OOD source besides coke can, also a texture difference
+    # lighting
+    "widowx_carrot_on_plate_brighter": ("PutCarrotOnPlateInScene-light-v1", {}),
+    "widowx_carrot_on_plate_darker" : ("PutCarrotOnPlateInScene-light-v2", {}),
+    "widowx_eggplant_in_basket_brighter": ("PutEggplantInBasketScene-light-v1", {}),
+    "widowx_eggplant_in_basket_darker": ("PutEggplantInBasketScene-light-v2", {}),
 }
 
 
