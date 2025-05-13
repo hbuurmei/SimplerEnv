@@ -47,7 +47,6 @@ ENVIRONMENTS = [
     "widowx_carrot_on_plate_lang_common", # rabbit, no distract
     "widowx_carrot_on_plate_lang_action",
     "widowx_carrot_on_plate_lang_neg",
-    "widowx_carrot_on_plate_lang_neg_action", # on the table not on the plate
     "widowx_carrot_on_plate_lang_common_distract", # rabbit
     "widowx_spoon_on_towel_lang_action",
     "widowx_spoon_on_towel_lang_common",
@@ -60,6 +59,26 @@ ENVIRONMENTS = [
     "widowx_coke_can_on_plate_lang_common",
     "widowx_coke_can_on_plate_lang_neg",
     "widowx_coke_can_on_plate_lang_common_distract", # thirsty
+    
+    "widowx_orange_juice_on_plate_clean", # ood source
+    "widowx_orange_juice_on_plate_distract", # + carrot + orange
+    "widowx_orange_juice_on_plate_lang_neg", # "put orange juice, not the orange, on the plate"
+    "widowx_orange_juice_on_plate_lang_common", # "put the juice squeezed from orange on the plate"
+    "widowx_orange_juice_on_plate_lang_common_distract", # "put the juice squeezed from orange on the plate" + carrot + orange
+    "widowx_orange_juice_on_plate_lang_common_distractv2", # "put the drink rich in vitamin C on the plate" + coke can + orange
+    "widowx_nut_on_plate_clean", # ood source
+    "widowx_nut_on_plate_lang_common", # ood source + language commonsense, nut -> metal component for taming bolts
+    "widowx_eggplant_on_keyboard_clean", # ood target
+    "widowx_carrot_on_ramekin_clean", # ood target
+    "widowx_carrot_on_wheel_clean", # ood target
+    "widowx_coke_can_on_ramekin_clean", # ood source
+    "widowx_coke_can_on_wheel_clean", # ood target
+    "widowx_nut_on_wheel_clean", # ood target
+    "widowx_cube_on_plate_lang_shape", # "put the square shaped object on the round shaped object"
+    "widowx_spoon_on_towel_lang_neg", # "put the spoon on the towel, not on the plate"
+    "widowx_spoon_on_towel_lang_color", # "put the shiny object with green handle on the blue object"
+    "widowx_carrot_on_plate_lang_color", # "put the orange object on the yellow object"
+
     # # ! not in used.
     # # lighting
     # "widowx_carrot_on_plate_brighter",
@@ -144,6 +163,25 @@ ENVIRONMENT_MAP = {
     "widowx_coke_can_on_plate_lang_common": ("PutCokeCanOnPlateInScene-LangV3", {}), # languge commonsense, no distract, (thirsty)
     "widowx_coke_can_on_plate_lang_neg": ("PutCokeCanOnPlateInScene-LangV1", {}), # "put coke can, not the carrot, not the pepsi can, on the plate"
     "widowx_coke_can_on_plate_lang_common_distract": ("PutCokeCanOnPlateInScene-LangV2", {}), # thirsty "put the object that one needs the most when they are thirsty on plate" + carrot + eggplant
+    
+    "widowx_orange_juice_on_plate_clean": ("PutOrangeJuiceOnPlateInScene-v2", {}), # ood source
+    "widowx_orange_juice_on_plate_distract": ("PutOrangeJuiceOnPlateInScene-distract", {}), # + carrot + orange
+    "widowx_orange_juice_on_plate_lang_neg": ("PutOrangeJuiceOnPlateInScene-LangV1", {}), # "put orange juice, not the orange, on the plate"
+    "widowx_orange_juice_on_plate_lang_common": ("PutOrangeJuiceOnPlateInScene-LangV2", {}), # "put the juice squeezed from orange on the plate"
+    "widowx_orange_juice_on_plate_lang_common_distract": ("PutOrangeJuiceOnPlateInScene-LangV3", {}), # "put the juice squeezed from orange on the plate" + carrot + orange
+    "widowx_orange_juice_on_plate_lang_common_distractv2": ("PutOrangeJuiceOnPlateInScene-LangV4", {}), # "put the drink rich in vitamin C on the plate" + coke can + orange
+    "widowx_nut_on_plate_clean": ("PutNutOnPlateInScene-v2", {}), # ood source
+    "widowx_nut_on_plate_lang_common": ("PutNutOnPlateInScene-LangV1", {}), # ood source + language commonsense, nut -> metal component for taming bolts
+    "widowx_eggplant_on_keyboard_clean": ("PutEggplantOnKeyboardInScene-v2", {}), # ood target
+    "widowx_carrot_on_ramekin_clean": ("PutCarrotOnRamekinInScene-v2", {}), # ood target
+    "widowx_carrot_on_wheel_clean": ("PutCarrotOnWheelInScene-v2", {}), # ood target
+    "widowx_coke_can_on_ramekin_clean": ("PutCokeCanOnRamekinInScene-v2", {}), # ood source and ood target
+    "widowx_coke_can_on_wheel_clean": ("PutCokeCanOnWheelInScene-v2", {}), # ood target ood source
+    "widowx_nut_on_wheel_clean": ("PutNutOnWheelInScene-v2", {}), # ood target
+    "widowx_cube_on_plate_lang_shape": ("PutGreenCubeOnPlateInScene-LangV1", {}), # "put the square shaped object on the round shaped object"
+    "widowx_spoon_on_towel_lang_neg": ("PutSpoonOnTableClothInScene-LangV4", {}), # "put the spoon on the towel, not on the plate"
+    "widowx_spoon_on_towel_lang_color": ("PutSpoonOnTableClothInScene-LangV5", {}), # "put the shiny object with green handle on the blue object"
+    "widowx_carrot_on_plate_lang_color": ("PutCarrotOnPlateInScene-LangV6", {}), # "put the orange object on the yellow object"
     # # ! not-in-used tasks
     # # lighting
     # "widowx_carrot_on_plate_brighter": ("PutCarrotOnPlateInScene-light-v1", {}),
